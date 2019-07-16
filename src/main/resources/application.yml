@@ -1,0 +1,51 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization.indent_output: true
+  datasource:
+   type: com.mysql.cj.jdbc.MysqlDataSource
+   url: jdbc:mysql://localhost:3306/krim?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+   username: root
+   password: damian
+   initialization-mode: always
+  h2:
+    console:
+      enabled: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: damianmswsis@gmail.com
+    password: stophakerom
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+    default-encoding: UTF-8
+
+server:
+    port: 8080
+    servlet:
+        session:
+            cookie:
+                http-only: true
+
+logging:
+  level:
+    root: debug
+    com.falanadamian: debug\
+
+com:
+  falana:
+    krim:
+      jwtRememberMeExpirationTime: 604800
+      jwtExpirationTime: 3600
+      secretKey: mysecretkey

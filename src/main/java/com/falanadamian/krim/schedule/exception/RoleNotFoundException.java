@@ -1,0 +1,12 @@
+package com.falanadamian.krim.schedule.exception;
+
+public class RoleNotFoundException extends RuntimeException{
+
+    public RoleNotFoundException() {
+        super("Role not found.");
+    }
+
+    public RoleNotFoundException(String message) {
+        super(message);
+    }
+}
